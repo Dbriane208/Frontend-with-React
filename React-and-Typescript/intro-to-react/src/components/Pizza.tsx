@@ -52,17 +52,19 @@ type PizzaProps = {
     soldOut: boolean
 }
 
-export function Pizza({name,ingredients,price,photoName,soldOut} : PizzaProps) {
+export function Pizza({ name, ingredients, price, photoName, soldOut }: PizzaProps) {
+
     return (
-        <div className="flex items-center text-center my-5">
+        <li className={`flex items-center text-center my-5 ${soldOut ? "grayscale opacity-50" : ""}`}>
             <img className="w-40 h-auto rounded-lg shadow-lg" src={photoName} alt="Pizza" />
             <div className="flex flex-col mx-3">
-            <h2 className="text-2xl font-bold">{name}</h2>
-            <h2 className="text-2xl font-bold">{price}</h2>
-            <h2 className="text-2xl font-bold">{soldOut}</h2>
-            <p className="text-gray-600 text-wrap">{ingredients}</p>
+                <h2 className="text-2xl font-bold">{name}</h2>
+                <h2 className="text-2xl font-bold">{price}</h2>
+                <h2 className="text-2xl font-bold">{soldOut}</h2>
+                <p className="text-gray-600 text-wrap">{ingredients}</p>
+                {soldOut && <span className="text-red-600 font-semibold mt-2">SOLD OUT</span>}
             </div>
-        </div>
+        </li>
     );
 }
 
