@@ -1,10 +1,12 @@
-import { Steps } from "./components/Steps";
+import { FarAway } from "./pages/FarAway";
+
 export default function App() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen w-screen">
+    <div className="h-screen w-screen">
       {/* <PizzaPage/> */}
       {/* <DevCard/> */}
-      <Steps/>
+      {/* <Steps/> */}
+      <FarAway/>
     </div>
   );
 }
